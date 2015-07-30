@@ -1,4 +1,4 @@
 class Reward < ActiveRecord::Base
-  has_many :joins
-  has_many :houses, through: :joins
+  has_many :house_rewards
+  has_many :houses, through: :house_rewards
 end

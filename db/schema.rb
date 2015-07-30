@@ -16,18 +16,18 @@ ActiveRecord::Schema.define(version: 20150730203108) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "house_rewards", force: :cascade do |t|
+    t.integer  "house_id"
+    t.integer  "reward_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "houses", force: :cascade do |t|
     t.string   "house_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "points"
-  end
-
-  create_table "joins", force: :cascade do |t|
-    t.string   "house_id"
-    t.integer  "reward_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "rewards", force: :cascade do |t|
