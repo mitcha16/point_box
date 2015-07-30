@@ -20,6 +20,18 @@ describe "users model test" do
     refute house.valid?
   end
 
+  it "can have rewards" do
+    house = House.create(house_name: "Ravenclaw", points: 80)
+
+    expect(house.rewards).to eq([])
+  end
+
+  it "can have points" do
+    house = House.create(house_name: "Ravenclaw", points: 80)
+
+    expect(house.points).to eq(80)
+  end
+
   it "will not create houses with the same name" do
     House.create(house_name: "Hufflepuff")
     House.create(house_name: "Hufflepuff")
